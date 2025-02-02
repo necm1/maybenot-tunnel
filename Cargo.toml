@@ -4,3 +4,11 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["codec"] }
+tokio-socks = "0.5"
+maybenot = { git = "https://github.com/maybenot-io/maybenot" }
+rand = "0.8"
+env_logger = "0.10"
+log = "0.4"
+enum-map = "2.5"
