@@ -1,24 +1,18 @@
-mod handler;
 mod obfuscation;
-mod socks5;
+mod server;
 
-use log::{error, info};
+use log::info;
 use obfuscation::init_maybenot;
-use std::sync::Arc;
-use tokio::net::TcpListener;
+use server::Server;
 
 #[tokio::main]
 async fn main() {
     env_logger::init();
-    info!("🧩 Maybenot SOCKS5-Proxy gestartet auf Port 1080...");
+
+    info!("🚀 Starting Maybenot SOCKS5 tunnel...");
 
     let framework = init_maybenot();
-    let listener = TcpListener::bind("127.0.0.1:1080")
-        .await
-        .expect("🔴 Fehler: Port blockiert!");
 
-    while let Ok((socket, _)) = listener.accept().await {
-        let framework = Arc::clone(&framework);
-        tokio::spawn(socks5::handle_client(socket, framework));
-    }
+    let server = Server::new(framework).await;
+    server.run().await;
 }
