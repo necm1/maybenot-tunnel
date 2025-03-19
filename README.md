@@ -1,6 +1,6 @@
 # Maybenot Tunnel
 
-A SOCKS5 proxy with traffic obfuscation capabilities using the Maybenot framework.
+A SOCKS5 proxy with traffic obfuscation capabilities using the [Maybenot Framework](https://github.com/maybenot-io/maybenot).
 
 ## What is Maybenot Tunnel?
 
@@ -17,7 +17,7 @@ The proxy is particularly useful for situations where you need to bypass basic t
 
 - 🔒 Full SOCKS5 proxy support (IPv4, IPv6, domain resolution)
 - 🌐 Automatic TLS/SSL detection and passthrough
-- 🧩 Traffic obfuscation using the Maybenot framework
+- 🧩 Traffic obfuscation using the [Maybenot Framework](https://github.com/maybenot-io/maybenot)
 - 📊 Intelligent handling of different traffic types
 - 🔄 Automatic reconnection with exponential backoff
 - 📝 Detailed logging with emoji indicators
