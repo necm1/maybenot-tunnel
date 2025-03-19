@@ -4,14 +4,37 @@ A SOCKS5 proxy with traffic obfuscation capabilities using the [Maybenot Framewo
 
 ## What is Maybenot Tunnel?
 
-Maybenot Tunnel is a lightweight SOCKS5 proxy that adds an extra layer of obfuscation to your internet traffic. It works by:
+**Maybenot Tunnel** is a lightweight SOCKS5 proxy that adds an extra layer of obfuscation to your internet traffic. It works by:
 
-1. Accepting SOCKS5 connections on port 1080
+1. Accepting SOCKS5 connections on port `1080` (will be configurable in future releases)
 2. Establishing connections to target servers
 3. Applying Maybenot obfuscation to the traffic
 4. Adding random padding and timing to confuse traffic analysis
 
 The proxy is particularly useful for situations where you need to bypass basic traffic analysis or when you want to add an extra layer of privacy to your connections.
+
+### The Power of Maybenot Obfuscation
+
+Maybenot is based on the principles of [DAITA (Defense Against AI-guided Traffic Analysis)](https://mullvad.net/de/blog/introducing-defense-against-ai-guided-traffic-analysis-daita), a technique developed to protect against sophisticated traffic analysis attacks. Modern adversaries can use machine learning and AI to analyze encrypted traffic patterns, potentially revealing:
+
+- What websites you're visiting
+- What services you're using
+- What actions you're taking online
+- Communication patterns and behaviors
+
+Even when your traffic is encrypted with HTTPS or VPN, these patterns can be analyzed through:
+- Packet timing
+- Packet sizes
+- Traffic volume
+- Connection patterns
+
+Maybenot works by introducing carefully designed randomness to your traffic patterns:
+- Adding variable-sized padding to packets
+- Fragmenting data into unpredictable chunks
+- Introducing timing variations that confuse pattern recognition
+- Generating dummy traffic during idle periods
+
+This makes it significantly harder for AI-based traffic analysis to identify patterns in your internet usage, enhancing your privacy beyond what standard encryption provides.
 
 ## Features
 
