@@ -1,1 +1,13 @@
-/target
+# macOS system files
+.DS_Store
+
+# Rust build artifacts
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
